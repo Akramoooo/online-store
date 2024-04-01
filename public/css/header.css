@@ -1,39 +1,121 @@
 .header{
-    background: #F57F10;
-    background: linear-gradient(135deg, #F57F10, #F2E464);
     margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
 }
 
 .main-header-container{
-    width: 80%;
-    margin-left: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 7px;
+    background: #F57F10;
+    background: linear-gradient(135deg, #F57F10, #F2E464);
 }
 
 /* Work with left header buttons */
 
-.left-header-btns>ul{
+.left-header-btns>ul, .right-header-btns>ul{
     list-style: none;
     display: flex;
     flex-direction: row;
 
 }
 
-.left-header-btns>ul>li{
+.left-header-btns>ul>li, .right-header-btns>ul>li{
     display: flex;
     height:60px;
     width: 120px;
     text-align: center;
 }
 
-.left-header-btns>ul>li>a{
+.left-header-btns>ul>li>a,p, .right-header-btns>ul>li>a,p{
     font-size: 20px;
     width: 100%;
     height: 79%;
     padding-top: 16px;
 }
 
-.main-header-container li:hover{
+.main-header-container li>a:hover{
     background-color: whitesmoke;
     transition: background-color 0.5s ease;
 }
+
+.user_profile_img{
+    width: 50px;
+    height: 30px;
+    border: 1px solid grey;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.search_input:hover{
+    background-color: whitesmoke;
+    transition: background-color 0.5s ease;
+}
+
+.search_input{
+    user-select: none;
+}
+
+.search_input img{
+    font-weight: bolder;
+    height: 10px;
+    width: 15px;
+}
+
+.arrow_bottom{
+    transition: transform 0.5s;
+}
+
+.rotate180 {
+    transform: rotate(180deg);
+}
+
+/* Search container */
+
+.search_container{
+    height: 70px;
+    width: 20rem;
+    background: #F57F10;
+    background: linear-gradient(135deg, #F57F10, #F2E464);
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    top: 60px;
+    right: 85px;
+    transition: display 0.5s ease;
+}
+
+.search_container.open{
+    display: flex;
+    transition: display 0.5s ease;
+}
+
+.search_container>ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.search_container>button{
+    height: 2rem;
+}
+
+.search_container>ul>li>input{
+    margin-bottom: 8px;
+    width: 15em;
+    font-size: 18px;
+    border: 1px solid black;
+    padding-bottom: 2px;
+}
+
+.search_container>ul>li>button{
+    width: 3rem;
+    height: 1.9em;
+}
+
+
 
