@@ -117,5 +117,94 @@
     height: 1.9em;
 }
 
+/* WORK WITH ADD PRODUCT FORM */
+
+.add-prod-container{
+    width: 80%;
+    position: absolute;
+    left: 10%;
+    background-color: #F57F10;
+    display: none;
+    border: 1px solid black;
+    padding-bottom: 10px;
+}
+
+.add-product-form>div{
+    margin: 5px;
+    margin-inline: 0;
+}
+
+
+.prod-form-back-btn>p>img{
+    max-height: 20px;
+    max-width: 20px;
+    padding: 4px;
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+
+.prod-form-back-btn>p{
+    padding: 0;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+.main-all-zones{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly
+
+}
+
+
+
+.upload-zone>label{
+    padding-bottom: 120px;
+    padding-right: 120px;
+    border: 1px solid black;
+    cursor:pointer;
+}
+
+.upload-zone{
+    display: flex;
+    flex-direction: column;
+}
+
+.upload-zone>button{
+    margin-top: 30px;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.upload-zone>button:hover{
+    transition: background-color 1s ease 0s;
+    background-color: green;
+    color: azure;
+}
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

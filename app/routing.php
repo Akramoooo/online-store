@@ -6,6 +6,7 @@ use League\Plates\Engine;
 use FastRoute\RouteCollector;
 use DI\ContainerBuilder;
 use App\Controllers;
+use App\Models\DataBase;
 
 $ContainerBuilder = new ContainerBuilder;
 $ContainerBuilder->addDefinitions([
@@ -18,6 +19,8 @@ $container = $ContainerBuilder->build();
 
 $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/home', ['App\Controllers\MainController', 'mainPage']);
+    // ASYNCH REQUESTS
+    $r->addRoute('POST', '/home/add-prod', ['App\Controllers\MainController', 'addProduct']);
 });
 
 // Fetch method and URI from somewhere
@@ -42,6 +45,6 @@ switch ($routeInfo[0]) {
     case FastRoute\Dispatcher::FOUND:
         $handler = $routeInfo[1];
         $vars = $routeInfo[2];
-        $container->call($handler, $vars);
+        $container->call($handler, ['formData' => $_POST]);
         break;
 }

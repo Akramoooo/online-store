@@ -1,11 +1,21 @@
 <link rel="stylesheet" type="text/css" href="/css/header.css">
 
+<?php
+use App\Models\Database;
+
+$categories = new Database;
+$categories = $categories->SelectAll("categories");
+
+?>
+
 <div class="header">
     <div class="main-header-container">
         <div class="left-header-btns">
             <ul>
                 <li><a href="#">Новости</a></li>
                 <li><a href="#">Корзина</a></li>
+                <li><a href="#">Panel Mode</a></li>
+                <li class="Add-new-prod-btn"><a>New Product</a></li>
             </ul>
         </div>
         <div class="right-header-btns">
@@ -33,6 +43,56 @@
         </div>
 
     </div>
+</div>
+
+<!-- IF NEW PRODUCT BUTTON WAS CLICKED -->
+<div class="add-prod-container">
+
+        <div class="prod-form-back-btn">
+            <p><img src="/images/back_icon.png" alt="" ></p>
+        </div>
+
+
+    <div class="main-all-zones">
+
+
+        <div class="upload-zone">
+            <input type="file" name="images[]" id="ImageInput" multiple accept="image/*">
+            
+            <label for="ImageInput">Add Photo</label>
+            <button>Добавить Товар</button>
+        </div>
+
+        <div class="add-prod-inputs">
+
+            <form class="add-product-form">
+                <div>
+                    <input type="text" name="product-name" id="prodNameInput">
+                    <label for="prodNameInput">Your product name</label>
+                </div>
+
+                <div>
+                    <input type="text" name="product-price" id="prodPriceInput">
+                    <label for="prodPriceInput">Your product price</label>
+                </div>
+
+                <div>
+                    <textarea name="add-prod-description" placeholder="Description" id="ProdDesc" cols="50" rows="10"></textarea>
+                </div>
+
+             <div>
+                    <select id="CategoryChoice">
+                        <?php foreach($categories as $category):?>
+                            <option value="<?=$category['id']?>" ><?=$category['title']?></option>
+                        <?php endforeach;?>
+                    </select>
+            </div> 
+         </form>
+        </div>
+
+
+    </div>
+    
 </div>
 <!-- If search button was clicked -->
 
