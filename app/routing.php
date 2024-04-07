@@ -8,6 +8,7 @@ use DI\ContainerBuilder;
 use App\Controllers;
 use App\Models\DataBase;
 
+
 $ContainerBuilder = new ContainerBuilder;
 $ContainerBuilder->addDefinitions([
     Engine::class => function (){
@@ -21,6 +22,11 @@ $dispatcher = FastRoute\simpleDispatcher(function(FastRoute\RouteCollector $r) {
     $r->addRoute('GET', '/home', ['App\Controllers\MainController', 'mainPage']);
     // ASYNCH REQUESTS
     $r->addRoute('POST', '/home/add-prod', ['App\Controllers\MainController', 'addProduct']);
+
+    //AUTH ROUTES
+    $r->addRoute('GET', '/auth/registration-form', ['App\Controllers\Auth\RegController', 'RegForm']);
+    $r->addRoute('POST', '/auth/register-user', ['App\Controllers\Auth\RegController', 'Register']);
+    $r->addRoute('GET', '/auth/authorization-form', ['App\Controllers\Auth\LogController', 'LogForm']);
 });
 
 // Fetch method and URI from somewhere

@@ -1,3 +1,4 @@
+
 <link rel="stylesheet" type="text/css" href="/css/header.css">
 
 <?php
@@ -10,8 +11,20 @@ $categories = $categories->SelectAll("categories");
 
 <div class="header">
     <div class="main-header-container">
+
+
+        <div class="mobile-search-input">
+                <ul>
+                    <button class="burger-btn">KNOPKA</button>
+                    <li><input type="search" name="" id="" placeholder="Найдется все"></li>
+                    <li><button>Поиск</button></li>
+                </ul>
+        </div>
+
+
         <div class="left-header-btns">
             <ul>
+                <li><a href="/home">Главная</a></li>
                 <li><a href="#">Новости</a></li>
                 <li><a href="#">Корзина</a></li>
                 <li><a href="#">Panel Mode</a></li>
@@ -19,7 +32,7 @@ $categories = $categories->SelectAll("categories");
             </ul>
         </div>
         <div class="right-header-btns">
-            <ul id="auth_container">
+            <ul id="auth_container" style="display:none;">
 
                 <li>
                     <p class="search_input">Поиск <img src="/images/down-arrow.png"  class="arrow_bottom" alt=""></p>
@@ -36,9 +49,9 @@ $categories = $categories->SelectAll("categories");
                     <p><img src="/images/user.png" alt="" class="user_profile_img"></p>
                 </li>
             </ul>
-            <ul class="non_auth_container" style="display:none;">
-                <li><a href="#">Регистрация</a></li>
-                <li><a href="#">Вход</a></li>
+            <ul class="non_auth_container" >
+                <li><a href="/auth/registration-form">Регистрация</a></li>
+                <li><a href="/auth/authorization-form">Вход</a></li>
             </ul>
         </div>
 
@@ -65,7 +78,7 @@ $categories = $categories->SelectAll("categories");
 
         <div class="add-prod-inputs">
 
-            <form class="add-product-form">
+            <form class="add-product-form" id="myform">
                 <div>
                     <input type="text" name="product-name" id="prodNameInput">
                     <label for="prodNameInput">Your product name</label>
@@ -95,6 +108,4 @@ $categories = $categories->SelectAll("categories");
     
 </div>
 <!-- If search button was clicked -->
-
-
 <script src="/js/header.js"></script>

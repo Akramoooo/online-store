@@ -15,6 +15,7 @@ class ComposerStaticInite69e44c33f47bbf346dab01e67ab6f02
         'P' => 
         array (
             'Psr\\Container\\' => 14,
+            'PHPMailer\\PHPMailer\\' => 20,
         ),
         'L' => 
         array (
@@ -43,6 +44,10 @@ class ComposerStaticInite69e44c33f47bbf346dab01e67ab6f02
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'League\\Plates\\' => 
         array (

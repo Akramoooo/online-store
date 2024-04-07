@@ -56,9 +56,16 @@ document.querySelector(".upload-zone>button").addEventListener("click", () => {
         contentType: false,
         success: function(response) {
             console.log(response);
+
+            document.getElementById('myform').reset();
+            AddProdContainer.style.display = "none";
+
         }
     });
+
+
 });
+
 
 
 

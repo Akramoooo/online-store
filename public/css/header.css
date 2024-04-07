@@ -184,12 +184,43 @@
     color: azure;
 }
 
- 
+ /* MOBILE PAGE */
+.mobile-search-input{
+    display: none;
+}
+ .mobile-search-input>ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    height: 40px;
+ }
+
+ .burger-btn{
+    margin-right: 10px;
+ }
+
+ .mobile-search-input>ul>li>input{
+    height: 30px;
+    width: 16rem;
+    margin: 5px;
+ }
+
+ .mobile-search-input>ul>li>button{
+    height: 30px;
+    width: 50px;
+    margin: 5px;
+ }
 
 
+@media(max-width:850px){
+    .left-header-btns, .right-header-btns{
+        display: none;
+    }
 
-
-
+    .mobile-search-input{
+        display: block;
+    }
+}
 
 
 

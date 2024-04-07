@@ -36,7 +36,7 @@ class MainController
             "price" => $formData['prod_price'],
             "descrip" => $formData['prod_desc'],
             "category" => $formData['category'],
-            "saller" => 1
+            "saller" => 4
         ];
 
         $productID = $this->db->Insert("products", $data);
